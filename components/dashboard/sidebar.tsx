@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FileText, Clock, Trash2, Plus, HelpCircle, LogOut, Circle } from "lucide-react";
@@ -12,6 +13,7 @@ const nav = [
 
 export function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <aside className="hidden md:flex w-64 shrink-0 flex-col border-r border-[var(--border)] bg-[var(--panel)] px-4 py-6">
@@ -25,13 +27,13 @@ export function Sidebar() {
         </div>
       </div>
 
-      <Link
-        href="/dashboard?upload=1"
+      <button
+        onClick={() => router.push("/dashboard?upload=1")}
         className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[var(--accent)] text-black font-medium text-sm hover:opacity-90 transition mb-6"
       >
-        <Plus className="w-4 h-4" strokeWidth={2.5} />
+        <Plus className="w-4 h-4" strokeWidth={2} />
         New Document
-      </Link>
+      </button>
 
       <nav className="flex flex-col gap-1">
         {nav.map(({ href, label, icon: Icon }) => {
