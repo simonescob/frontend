@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { EyeOff, Eye } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
@@ -58,9 +59,7 @@ export default function Signup() {
       {/* Header */}
       <header className="flex items-center justify-between px-4 sm:px-8 py-4 border-b border-zinc-200 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-black dark:bg-white flex items-center justify-center">
-            <Eye className="w-4 h-4 text-white dark:text-black" />
-          </div>
+          <Image src="/logo.svg" alt="PitchLens" width={32} height={32} />
           <span className="font-semibold text-lg">PitchLens</span>
         </div>
         <Link href="/" className="text-sm text-zinc-500 hover:text-black dark:hover:text-white transition-colors">
@@ -88,7 +87,7 @@ export default function Signup() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="founder@startup.com"
                 required
-                className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-colors"
+                className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-accent transition-colors"
               />
             </div>
 
@@ -104,7 +103,7 @@ export default function Signup() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-colors pr-10"
+                  className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-accent transition-colors pr-10"
                 />
                 <button
                   type="button"
@@ -127,14 +126,14 @@ export default function Signup() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="••••••••"
                 required
-                className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-colors"
+                className="h-11 px-4 rounded-xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-black dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-accent transition-colors"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="h-11 flex items-center justify-center rounded-xl bg-black text-white text-sm font-semibold hover:opacity-90 disabled:opacity-50 transition-opacity"
+              className="h-11 flex items-center justify-center rounded-xl bg-accent text-black text-sm font-semibold hover:opacity-90 disabled:opacity-50 transition-opacity"
             >
               {loading ? "Creating account..." : "Create account"}
             </button>

@@ -31,7 +31,7 @@ export function Topbar({ email }: { email: string }) {
         <div
           aria-label={`Signed in as ${email}`}
           title={email}
-          className="w-9 h-9 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 grid place-items-center text-sm font-semibold text-black"
+          className="w-9 h-9 rounded-full bg-accent grid place-items-center text-sm font-semibold text-black"
         >
           {initial}
         </div>

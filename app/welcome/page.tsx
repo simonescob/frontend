@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { Eye, FileText, BarChart3, Sparkles } from "lucide-react";
 
@@ -17,9 +18,7 @@ export default async function WelcomePage() {
       {/* Header */}
       <header className="flex items-center justify-between px-4 sm:px-8 py-4 border-b border-zinc-200 dark:border-zinc-800 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-black dark:bg-white flex items-center justify-center">
-            <Eye className="w-4 h-4 text-white dark:text-black" />
-          </div>
+          <Image src="/logo.svg" alt="PitchLens" width={32} height={32} />
           <span className="font-semibold text-lg">PitchLens</span>
         </div>
       </header>
@@ -27,8 +26,8 @@ export default async function WelcomePage() {
       {/* Welcome content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-black dark:bg-white mb-6">
-            <Sparkles className="w-8 h-8 text-white dark:text-black" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent mb-6">
+            <Sparkles className="w-8 h-8 text-black" />
           </div>
           <h1 className="text-2xl sm:text-4xl font-bold text-black dark:text-white mb-4">
             Welcome to PitchLens, {user.email?.split('@')[0]}!
@@ -73,7 +72,7 @@ export default async function WelcomePage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/dashboard"
-            className="h-10 sm:h-12 px-4 sm:px-8 flex items-center justify-center rounded-xl bg-black text-white text-sm font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto"
+            className="h-10 sm:h-12 px-4 sm:px-8 flex items-center justify-center rounded-xl bg-accent text-black text-sm font-semibold hover:opacity-90 transition-opacity w-full sm:w-auto"
           >
             Go to Dashboard
           </Link>

@@ -1,4 +1,5 @@
 import { Eye, Zap, ShieldCheck, FileText } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { UploadZone } from "@/components/upload-zone";
 
@@ -8,9 +9,7 @@ export default function Home() {
       {/* Header */}
       <header className="flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5 border-b border-zinc-200 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-black dark:bg-white flex items-center justify-center">
-            <Eye className="w-4 h-4 text-white dark:text-black" />
-          </div>
+          <Image src="/logo.svg" alt="PitchLens" width={32} height={32} />
           <span className="font-semibold text-lg">PitchLens</span>
         </div>
         <nav className="flex items-center gap-6">
@@ -19,7 +18,7 @@ export default function Home() {
           </Link>
           <Link
             href="/login"
-            className="h-9 px-4 flex items-center rounded-full bg-black text-white text-sm font-medium dark:bg-white dark:text-black hover:opacity-90 transition-opacity"
+            className="h-9 px-4 flex items-center rounded-full bg-accent text-black text-sm font-medium hover:opacity-90 transition-opacity"
           >
             Sign In
           </Link>
@@ -64,8 +63,8 @@ export default function Home() {
             },
           ].map(({ icon: Icon, title, desc }) => (
             <div key={title} className="flex flex-col gap-3 p-4 sm:p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 text-left">
-               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center">
-                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-700 dark:text-zinc-300" />
+               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
               </div>
               <h3 className="font-semibold text-sm text-black dark:text-white">{title}</h3>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{desc}</p>
