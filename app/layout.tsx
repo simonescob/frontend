@@ -18,6 +18,33 @@ export const metadata: Metadata = {
   title: "PitchLens — VC-Grade Analysis in Seconds",
   description:
     "Upload your pitch deck or financial report and get instant structured analysis — risks, market assumptions, red flags, and VC-style questions.",
+  keywords: ["venture capital", "pitch deck analysis", "AI due diligence", "founder tools", "startup analysis", "investment analysis"],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "PitchLens — VC-Grade Analysis in Seconds",
+    description:
+      "Upload your pitch deck or financial report and get instant structured analysis — risks, market assumptions, red flags, and VC-style questions.",
+    siteName: "PitchLens",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "PitchLens — VC-Grade Analysis in Seconds",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PitchLens — VC-Grade Analysis in Seconds",
+    description:
+      "Upload your pitch deck or financial report and get instant structured analysis — risks, market assumptions, red flags, and VC-style questions.",
+    images: ["/og-image.png"],
+  },
 };
 
 export const viewport = {
